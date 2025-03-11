@@ -1,4 +1,4 @@
-import { nextMove } from './src/nextMove.js';
+const { nextMove } = require('./src/solution');
 
 
 function processData(input) {
@@ -15,3 +15,5 @@ function processData(input) {
 
     nextMove(N, r, c, grid);
 }
+
+module.exports = { processData };

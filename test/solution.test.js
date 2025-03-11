@@ -1,5 +1,7 @@
-// test/solution.test.js
-const { nextMove, processData } = require('../src/solution');
+const { nextMove } = require('../src/solution');
+const { processData } = require('../index.js');
+
+//test suite uses spyOn to mock console.log
 
 describe('nextMove', () => {
     let consoleSpy;
@@ -28,8 +30,8 @@ describe('nextMove', () => {
     test('Princess to the right', () => {
         const N = 3, r = 1, c = 0;
         const grid = [
-            "-p-",
-            "m--",
+            "---",
+            "m-p",
             "---"
         ];
         nextMove(N, r, c, grid);
@@ -59,8 +61,6 @@ describe('nextMove', () => {
     });
 
     test('No move when bot is at princess location', () => {
-        // Even though the challenge assumes the princess is in a corner, we test that if bot is already at princess,
-        // no move is printed.
         const N = 3, r = 1, c = 1;
         const grid = [
             "---",
