@@ -1,3 +1,4 @@
+// determines the next single move in a grid to reach the princess.
 function nextMove(N, r, c, grid) {
     // Validate grid size
     if (isNaN(N) || N < 1 || N >= 100) {
@@ -21,6 +22,9 @@ function nextMove(N, r, c, grid) {
     // Find princess position in grid
     for (let i = 0; i < N; i++) {
         let col = grid[i].indexOf('p');
+        //indexOf will return -1 if 'p' is not found
+        //if found, break the loop
+        //and store the row and column of the princess
         if (col !== -1) {
             princessRow = i;
             princessCol = col;
